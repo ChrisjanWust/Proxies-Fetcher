@@ -6,11 +6,14 @@ import cfscrape
 
 class ProxiesFetcher:
 
-    def default(self):
+    def __init__(self):
+        self.useless_variable = None
+
+    def default():
         return self.hidemyna()
 
 
-    def freeproxylist(self, number=None):
+    def freeproxylist(number=None):
         url = 'https://free-proxy-list.net/'
         response = requests.get(url)
         parser = html.fromstring(response.text)
@@ -29,8 +32,8 @@ class ProxiesFetcher:
 
 
 
-    def hidemyna(self, number=None):
-        url = 'https://hidemyna.me/en/proxy-list/?maxtime=800&type=s&anon=34'
+    def hidemyna(number=None):
+        url = 'https://hidemyna.me/en/proxy-list/?country=FRDENLGBUS&maxtime=200&type=h'
         scraper = cfscrape.create_scraper()  # returns a CloudflareScraper instance
         # Or: scraper = cfscrape.CloudflareScraper()  # CloudflareScraper inherits from requests.Session
         body = scraper.get(url).content
@@ -53,11 +56,11 @@ class ProxiesFetcher:
         return proxies
 
 
-    def limit(self, input_list, limit):
+    def limit(input_list, limit):
         return input_list[:limit]
 
 
-    def manual_list(self):
+    def manual_list():
         return [
             "199.21.97.54:80",
             "199.21.97.220:80",
