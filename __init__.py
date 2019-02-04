@@ -4,7 +4,7 @@ import re
 import cfscrape
 
 
-class ProxyFetcher:
+class ProxiesFetcher:
 
     def default(self):
         return self.hidemyna()
