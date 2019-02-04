@@ -3,4 +3,4 @@ Python Module
 
 In development.
 
-Returns list of proxy URL's with port numbers through various ways. Created for Scrapy, but 100% modular.
+Returns lists of proxies (ip's with port numbers) by crawling various websites. Created for Scrapy, but 100% modular.
