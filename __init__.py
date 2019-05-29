@@ -16,7 +16,6 @@ class ProxiesFetcher:
     def freeproxylist(number=None):
         url = 'https://free-proxy-list.net/'
         response = requests.get(url)
-
         parser = html.fromstring(response.text)
         proxies = []
         for i, tr in enumerate(parser.xpath('//tbody/tr')[:]):
@@ -28,12 +27,11 @@ class ProxiesFetcher:
                 proxies.append(proxy)
             if number and i >= number-1:
                 break
-        print(proxies)
         return proxies
 
 
     @staticmethod
-    def hidemyna(number=None, anonymity=None, http = True, https = False):
+    def hidemyna(number=None, anonymity=None, http=True, https=False):
         url = 'https://hidemyna.me/en/proxy-list/?'  # parameters will be added
         # limits max time to only include fast proxies. The limit is varied according to the typical performance for the level of anonymity
         if anonymity and 1 <= anonymity and anonymity <= 4:
