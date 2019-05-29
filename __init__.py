@@ -39,15 +39,15 @@ class ProxiesFetcher:
 
         if anonymity and 1 <= anonymity and anonymity <= 4:
                 anonymity_maxtime = {
-                    0: 200,
-                    1: 250,
+                    0: 400,
+                    1: 450,
                     2: 2000,
                     3: 1000,
-                    4: 350
+                    4: 550
                 }
                 url += '&maxtime=' + str(anonymity_maxtime[anonymity])
         else:
-            url += '&maxtime=200'
+            url += '&maxtime=400'
 
         url += '&type='
         if http: url += 'h'
